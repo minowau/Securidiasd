@@ -1,0 +1,1 @@
+// SecureShareClient implementation placeholder 

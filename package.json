@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "name": "securidiasd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "open": "^10.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:admin": "concurrently \"npm run start:admin-api\" \"npm run start:admin-ui\" \"npm run open:admin-ui\"",
+    "start:admin-api": "cross-env PORT=4100 npm --prefix ./examples/admin-api start",
+    "start:admin-ui": "cross-env PORT=4101 npm --prefix ./examples/admin-api/secureshare-sdk/examples/admin-ui start",
+    "open:admin-ui": "npx open http://localhost:4101"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

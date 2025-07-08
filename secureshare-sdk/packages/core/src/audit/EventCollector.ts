@@ -1,0 +1,1 @@
+// EventCollector implementation placeholder 

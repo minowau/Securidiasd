@@ -1,0 +1,33 @@
+{
+  "name": "secureshare-sdk",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo for SecureShare SDK, React components, Node.js middleware, CLI, and examples.",
+  "workspaces": [
+    "packages/core",
+    "packages/react",
+    "packages/node",
+    "packages/cli",
+    "tools/mock-server"
+  ],
+  "scripts": {
+    "build": "bash ./tools/scripts/build-all.sh",
+    "test": "bash ./tools/scripts/test-all.sh",
+    "lint": "bash ./tools/scripts/lint-all.sh",
+    "start:admin": "concurrently \"npm run start:admin-api\" \"npm run start:admin-ui\" \"npm run open:admin-ui\"",
+    "start:admin-api": "cross-env PORT=4100 npm --prefix ./examples/admin-api start",
+    "start:admin-ui": "cross-env PORT=4101 npm --prefix ./examples/admin-api/secureshare-sdk/examples/admin-ui start",
+    "open:admin-ui": "npx open http://localhost:4101"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/secureshare-sdk.git"
+  },
+  "author": "SecureShare Contributors",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "open": "^10.1.2",
+    "cross-env": "^7.0.3"
+  }
+}

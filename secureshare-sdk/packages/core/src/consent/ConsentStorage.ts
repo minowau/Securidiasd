@@ -1,0 +1,1 @@
+// ConsentStorage implementation placeholder 
